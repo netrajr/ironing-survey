@@ -409,21 +409,6 @@
     .section-card { padding: 1.4rem; }
     .radio-cards { grid-template-columns: 1fr 1fr; }
   }
-
-  /* Config notice */
-  .config-banner {
-    background: #FFF8E8;
-    border: 1px solid #FAC775;
-    border-radius: var(--radius-sm);
-    padding: 12px 16px;
-    font-size: 13px;
-    color: #633806;
-    margin-bottom: 1.5rem;
-    display: flex;
-    gap: 10px;
-    align-items: flex-start;
-  }
-  .config-banner strong { font-weight: 500; display: block; margin-bottom: 2px; }
 </style>
 </head>
 <body>
@@ -442,14 +427,6 @@
 </div>
 
 <main>
-
-  <div class="config-banner" id="configBanner">
-    <span>⚙️</span>
-    <div>
-      <strong>Developer Setup Required</strong>
-      Replace the <code>SHEET_WEBHOOK_URL</code> variable in the script below with your Google Apps Script Web App URL to enable response saving. See instructions at the bottom of this file.
-    </div>
-  </div>
 
   <form id="surveyForm">
 
@@ -542,7 +519,7 @@
             <span class="icon">🏠</span>Iron at home
           </div>
           <div class="radio-card" data-val="Outside">
-            <span class="icon">🛒</span>Give outside
+            <span class="icon">👔</span>Give outside
           </div>
           <div class="radio-card" data-val="Home+Outside">
             <span class="icon">🔄</span>Both
@@ -570,7 +547,7 @@
       </div>
 
       <div class="question branch-home" data-q="11">
-        <div class="question-label"><span class="q-num">11</span> If given a reliable option to send clothes outside for ironing, would you prefer that?</div>
+        <div class="question-label"><span class="q-num">11</span> If given a reliable option to send clothes to a local istri wala, would you prefer that?</div>
         <div class="chips" data-field="q_home_switch" data-type="single">
           <div class="chip" data-val="Yes, definitely">Yes, definitely</div>
           <div class="chip" data-val="Maybe sometimes">Maybe sometimes</div>
@@ -585,8 +562,8 @@
           <div class="chip" data-val="Trust issues">Trust issues</div>
           <div class="chip" data-val="Timing / availability">Timing / availability</div>
           <div class="chip" data-val="Immediate need — can't wait">Immediate need</div>
-          <div class="chip" data-val="No iron-wala nearby">No iron-wala nearby</div>
-          <div class="chip" data-val="It's convenient at home">It's convenient at home</div>
+          <div class="chip" data-val="No local istri wala nearby">No istri wala nearby</div>
+          <div class="chip" data-val="It's convenient at home">Convenient at home</div>
           <div class="chip" data-val="Other">Other</div>
         </div>
         <div class="other-field" id="other_home_no">
@@ -595,7 +572,7 @@
       </div>
 
       <div class="question branch-home" data-q="13">
-        <div class="question-label"><span class="q-num">13</span> Is there an iron-wala near your house?</div>
+        <div class="question-label"><span class="q-num">13</span> Is there a local istri wala near your house?</div>
         <div class="chips" data-field="q_has_ironwala" data-type="single">
           <div class="chip" data-val="Yes">Yes</div>
           <div class="chip" data-val="No">No</div>
@@ -604,13 +581,13 @@
       </div>
 
       <div class="question branch-has-ironwala" data-q="14">
-        <div class="question-label"><span class="q-num">14</span> If you have an iron-wala nearby, why don't you use them?</div>
+        <div class="question-label"><span class="q-num">14</span> If you have a local istri wala nearby, why don't you use them?</div>
         <div class="chips" data-field="q_ironwala_barrier" data-type="multi">
           <div class="chip" data-val="Quality">Quality</div>
           <div class="chip" data-val="Trust">Trust</div>
           <div class="chip" data-val="Price">Price</div>
           <div class="chip" data-val="Delivery time">Delivery time</div>
-          <div class="chip" data-val="Prefer ironing in hand (don't want to wait)">Iron in hand</div>
+          <div class="chip" data-val="Prefer ironing in hand (don't want to wait)">Don't want to wait</div>
           <div class="chip" data-val="Other">Other</div>
         </div>
         <div class="other-field" id="other_ironwala_barrier">
@@ -622,10 +599,9 @@
       <div class="question branch-outside" data-q="15">
         <div class="question-label"><span class="q-num">15</span> Where do you give clothes for ironing? (Pick all that apply)</div>
         <div class="chips" data-field="q_outside_type" data-type="multi">
-          <div class="chip" data-val="Local streetside thela / iron-wala">Local streetside / thela</div>
-          <div class="chip" data-val="Ironing shop nearby">Ironing shop</div>
+          <div class="chip" data-val="Local istri wala (street vendor)">Local istri wala</div>
+          <div class="chip" data-val="Local ironing shop">Local ironing shop</div>
           <div class="chip" data-val="App-based service">App-based service</div>
-          <div class="chip" data-val="Laundry that also irons">Laundry service</div>
           <div class="chip" data-val="Other">Other</div>
         </div>
         <div class="other-field" id="other_outside_type">
@@ -723,12 +699,12 @@
       </div>
 
       <div class="question visible" data-q="24">
-        <div class="question-label"><span class="q-num">24</span> Have you ever faced issues with your ironing service / iron-wala?</div>
+        <div class="question-label"><span class="q-num">24</span> Have you ever faced issues with your local istri wala / ironing service?</div>
         <div class="chips" data-field="q_pain" data-type="multi">
           <div class="chip" data-val="Clothes returned damaged / burnt">Damaged / burnt</div>
           <div class="chip" data-val="Lost a garment">Lost garment</div>
           <div class="chip" data-val="Delayed beyond expected time">Delayed</div>
-          <div class="chip" data-val="Iron-wala unavailable when needed">Iron-wala unavailable</div>
+          <div class="chip" data-val="Istri wala unavailable when needed">Istri wala unavailable</div>
           <div class="chip" data-val="Hygiene concerns">Hygiene concerns</div>
           <div class="chip" data-val="Overcharged or wrong count">Overcharged / wrong count</div>
           <div class="chip" data-val="No major issues">No major issues</div>
@@ -794,14 +770,8 @@
 
 <script>
 // ─── CONFIG ───────────────────────────────────────────────────────────────────
-// Replace with your Google Apps Script Web App URL after deployment
 const SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbw1Puw-UuthzEDeNB_uQJgD2wWYiG63JcT81VpsMtJ-kNozYgXqkInmKFKY8RDoD803/exec';
 // ─────────────────────────────────────────────────────────────────────────────
-
-// Hide config banner if URL is set
-if (SHEET_WEBHOOK_URL !== 'YOUR_APPS_SCRIPT_URL_HERE') {
-  document.getElementById('configBanner').style.display = 'none';
-}
 
 // CHIP / RADIO CARD logic
 document.querySelectorAll('.chips[data-type="single"], .radio-cards[data-type="single"]').forEach(container => {
@@ -880,8 +850,6 @@ function handleBranching(field, val) {
       el.classList.toggle('visible', hasIt);
     });
   }
-
-  if (field === 'q_outside_type') return; // multi, handled separately
 }
 
 // Show app name field when "App-based service" is selected
@@ -989,8 +957,8 @@ function collectData() {
     home_qty_per_session: document.getElementById('q_home_qty')?.value || '',
     home_switch_to_outside: getChipVal('q_home_switch') || '',
     home_no_reason: multiWithOther('q_home_no_reason', 'q_home_no_other'),
-    has_ironwala_nearby: getChipVal('q_has_ironwala') || '',
-    ironwala_barrier: multiWithOther('q_ironwala_barrier', 'q_ironwala_barrier_other'),
+    has_istri_wala_nearby: getChipVal('q_has_ironwala') || '',
+    istri_wala_barrier: multiWithOther('q_ironwala_barrier', 'q_ironwala_barrier_other'),
     outside_service_type: multiWithOther('q_outside_type', 'q_outside_type_other'),
     app_name: document.getElementById('q_app_name')?.value?.trim() || '',
     clothes_handover: getChipVal('q_handover') || '',
@@ -1026,17 +994,6 @@ async function submitSurvey() {
   status.className = 'status-msg';
   status.textContent = 'Saving your response...';
 
-  // Save locally always
-  saveLocally(data);
-
-  if (SHEET_WEBHOOK_URL === 'YOUR_APPS_SCRIPT_URL_HERE') {
-    // Demo mode — show success anyway
-    setTimeout(() => {
-      showSuccess();
-    }, 800);
-    return;
-  }
-
   try {
     await fetch(SHEET_WEBHOOK_URL, {
       method: 'POST',
@@ -1047,18 +1004,10 @@ async function submitSurvey() {
     showSuccess();
   } catch (err) {
     status.className = 'status-msg error';
-    status.textContent = 'Could not connect to server. Response saved locally.';
+    status.textContent = 'Could not connect to server. Please try again.';
     btn.disabled = false;
     btn.textContent = 'Submit my responses →';
   }
-}
-
-function saveLocally(data) {
-  try {
-    const existing = JSON.parse(localStorage.getItem('ironing_responses') || '[]');
-    existing.push(data);
-    localStorage.setItem('ironing_responses', JSON.stringify(existing));
-  } catch(e) {}
 }
 
 function showSuccess() {
@@ -1072,47 +1021,6 @@ function showSuccess() {
 // Initial state
 updateProgress();
 </script>
-
-<!--
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-GOOGLE SHEETS SETUP — One-time 5 minute setup
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-1. Create a new Google Sheet at sheets.google.com
-   Name it: "Ironing Survey Responses"
-
-2. Go to Extensions → Apps Script
-
-3. Paste this code:
-
-const SHEET_NAME = 'Sheet1';
-
-function doPost(e) {
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_NAME);
-  const data = JSON.parse(e.postData.contents);
-
-  if (sheet.getLastRow() === 0) {
-    sheet.appendRow(Object.keys(data));
-  }
-  sheet.appendRow(Object.values(data));
-
-  return ContentService
-    .createTextOutput(JSON.stringify({ status: 'success' }))
-    .setMimeType(ContentService.MimeType.JSON);
-}
-
-4. Click Deploy → New Deployment
-   - Type: Web App
-   - Execute as: Me
-   - Who has access: Anyone
-   - Click Deploy → Copy the Web App URL
-
-5. Paste that URL in this file replacing:
-   const SHEET_WEBHOOK_URL = '';
-
-That's it! Every survey submission will now appear as a new row in your Sheet.
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
--->
 
 </body>
 </html>
